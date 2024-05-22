@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/my_primary"
+    android:padding="16dp"
+    tools:context=".NoteDetailsActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/delete_note_text_view_btn"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/title_bar_layout">
+
+                <TextView
+                    android:id="@+id/page_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add New Note"
+                    android:textColor="@color/black"
+                    android:textSize="32sp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:id="@+id/save_note_btn"
+                    android:src="@drawable/ic_baseline_done_24"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    app:tint="@color/white"
+                    android:background="?attr/selectableItemBackgroundBorderless" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/note_content"
+                android:layout_below="@id/title_bar_layout"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginVertical="26dp"
+                android:backgroundTint="@color/white"
+                android:background="@drawable/rounded_corner">
+
+                <EditText
+                    android:id="@+id/notes_title_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Title"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginVertical="8dp"
+                    android:padding="12dp"
+                    android:textColor="@color/black"/>
+
+                <EditText
+                    android:id="@+id/notes_content_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Content"
+                    android:minLines="15"
+                    android:gravity="top"
+                    android:textSize="20sp"
+                    android:layout_marginVertical="8dp"
+                    android:padding="12dp"
+                    android:textColor="@color/black"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/note_content"
+                android:id="@+id/background_note_color"
+                android:orientation="vertical"
+                android:padding="15dp"
+                android:layout_marginVertical="10dp"
+                android:backgroundTint="@color/white"
+                android:background="@drawable/rounded_corner">
+
+                <TextView
+                    android:id="@+id/note_background_color"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Background color for the note"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/colorSelector"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true">
+
+                    <RadioButton
+                        android:id="@+id/colorPink"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/circle_shape_red"
+                        android:layout_marginEnd="12dp"/>
+
+                    <RadioButton
+                        android:id="@+id/colorBlue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/circle_shape_blue"
+                        android:layout_marginEnd="12dp"/>
+
+                    <RadioButton
+                        android:id="@+id/colorGreen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/circle_shape_green"
+                        android:layout_marginEnd="12dp"/>
+
+                    <RadioButton
+                        android:id="@+id/colorYellow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/circle_shape_yellow"
+                        android:layout_marginEnd="12dp"/>
+                </RadioGroup>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/background_note_color"
+                android:id="@+id/text_bold"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:layout_marginVertical="10dp"
+                android:backgroundTint="@color/white"
+                android:background="@drawable/rounded_corner">
+
+                <TextView
+                    android:id="@+id/bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bold Text"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <Switch
+                    android:id="@+id/switch_bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textOff="BOLD OFF"
+                    android:textOn="BOLD ON"
+                    android:checked="false"
+                    android:layout_marginTop="16dp"
+                    android:layout_alignParentEnd="true"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_bold"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:layout_marginVertical="10dp"
+                android:backgroundTint="@color/white"
+                android:background="@drawable/rounded_corner">
+
+                <TextView
+                    android:id="@+id/size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Text Size"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/font_size_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:hint="Enter font size"
+                    android:ems="10"
+                    android:layout_below="@id/switch_bold"
+                    android:layout_marginTop="8dp"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/delete_note_text_view_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete note"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:visibility="gone"
+        android:textColor="#000000"/>
+</RelativeLayout>
